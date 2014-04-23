@@ -1,0 +1,42 @@
+{
+  "name": "grunt-git-tag-parse",
+  "description": "Save a grunt variable containing a version string from a git ta, falling backon revision if a tag is not available",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dlasky/grunt-git-tag-parse",
+  "author": {
+    "name": "Dan Lasky",
+    "email": "dlasky@mediamath.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dlasky/grunt-git-tag-parse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dlasky/grunt-git-tag-parse/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/dlasky/grunt-git-tag-parse/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "dependencies": {
+    "when": "^3.1.0"
+  }
+}
