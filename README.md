@@ -1,6 +1,6 @@
 # grunt-git-tag-parse
 
-> Save a grunt variable containing a version string from a git ta, falling backon revision if a tag is not available
+> Save a grunt variable containing a version string from a git tag, falling backon revision if a tag is not available
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
