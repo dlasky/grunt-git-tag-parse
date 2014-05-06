@@ -33,13 +33,23 @@ module.exports = function(grunt) {
     function writeResult(data) {
       var def = when.defer(),
         dirty = data[0].split("\n"),
-        tagRev = data[1],
+        tag = data[1],
+        rev = data[2],
         output = "";
-      
-      output += tagRev;
+
+      dirty = dirty.filter(function(item) {
+        var f = item.slice(0,2);
+        return f === "??" || f === " M";
+      });
+
+      if (tag !== "no tag") {
+        output += tag;
+      } else {
+        output += rev;
+      }
 
       if (dirty.length) {
-        output += " (dirty)";
+        output += "(dirty)";
       }
 
       grunt.log.ok(output);
@@ -48,7 +58,7 @@ module.exports = function(grunt) {
       return def.promise;
     }
 
-    when.some([
+    when.all([
       spawn({
         cmd:"git",
         args: ["status","--porcelain"]
@@ -56,12 +66,12 @@ module.exports = function(grunt) {
       spawn({
         cmd:"git",
         args: ["describe", "--exact-match", options.revision]
-      }),
+      }).else("no tag"),
       spawn({
         cmd:"git",
         args: ["rev-parse", "--verify", "--short=" + options.number, options.revision]
       })
-    ], 2)
+    ])
     .then(writeResult)
     .done(done);
 
