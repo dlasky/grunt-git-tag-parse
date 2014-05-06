@@ -1,7 +1,7 @@
 {
   "name": "grunt-git-tag-parse",
   "description": "Save a grunt variable containing a version string from a git ta, falling backon revision if a tag is not available",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/dlasky/grunt-git-tag-parse",
   "author": {
     "name": "Dan Lasky",
